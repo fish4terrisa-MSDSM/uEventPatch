@@ -37,7 +37,7 @@ public class MainHook implements IXposedHookLoadPackage {
                 lpparam.classLoader,
                 "onUEvent",
                 "com.android.server.ExtconUEventObserver$ExtconInfo",
-                "android.os.UEventObserver$UEvent",// 如果参数是宿主的类，你可以使用findClass来加载那个类或是填写那个类的完整名称！
+                "android.os.UEventObserver$UEvent",
                 new XC_MethodHook() {
                     @Override
                     protected void beforeHookedMethod(MethodHookParam param) {
@@ -52,7 +52,7 @@ public class MainHook implements IXposedHookLoadPackage {
         XposedHelpers.findAndHookMethod("com.android.server.WiredAccessoryManager$WiredAccessoryObserver",
                 lpparam.classLoader,
                 "onUEvent",
-                "android.os.UEventObserver$UEvent",// 如果参数是宿主的类，你可以使用findClass来加载那个类或是填写那个类的完整名称！
+                "android.os.UEventObserver$UEvent",
                 new XC_MethodHook() {
                     @Override
                     protected void beforeHookedMethod(MethodHookParam param) {
